@@ -33,8 +33,8 @@ function Tracker(event)
     let zone = document.querySelector('#track');
     let cursor = document.querySelector('#cursor');
 
-    cursor.style.top = event.clientY + 'px';
-    cursor.style.left = event.clientX + 'px';
+    cursor.style.top = event.clientY  - 4 + 'px';
+    cursor.style.left = event.clientX - 4 + 'px';
 }
 
 function toggleDropdown() {
