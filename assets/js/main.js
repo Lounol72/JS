@@ -60,6 +60,8 @@ function Submit(event) {
         { id: 'adresse', regex: /^.{2,}$/, errorMessage: 'L\'adresse doit contenir au moins 2 caractères' },
         { id: 'mdp', regex: /^(?=.*[A-Z])(?=.*\d)(?=.*[$?!&#@])[A-Za-z\d$?!&#@]{8}$/, errorMessage: 'Le mot de passe n\'est pas valide' },
         { id: 'numTel', regex: /^\d{10}$/, errorMessage: 'Le numéro de téléphone doit contenir exactement 10 chiffres' }
+
+        
     ];
 
     let valid = fields.every(field => {
