@@ -7,42 +7,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <h1>Première page avec du JavaScript</h1>
-    <img src="assets/img/javascript-logo-0.png" width="50pt"  alt="Le logo de JavaScript" id="Rouge">
+    <div id="TP1">
+      <h1>Première page avec du JavaScript</h1>
+        <img src="assets/img/javascript-logo-0.png" width="50pt"  alt="Le logo de JavaScript" id="Rouge">
 
-    <p id="monid"> Du texte à droite </p>
+        <p id="monid"> Du texte à droite </p>
 
-    <p class="maclasse"> Du texte en rouge ou d'une autre couleur</p>
-    
-    
-    <p>Juste une liste </p>
-    <button type="button" id="afficher">Afficher</button>
-    <ul> 
-      <li>exo1</li>
-      <li>exo2</li>
-      <li>exo3</li>
-    </ul>
+        <p class="maclasse"> Du texte en rouge ou d'une autre couleur</p>
+        
+        
+        <p>Juste une liste </p>
+        <button type="button" id="afficher">Afficher</button>
+        <ul> 
+          <li>exo1</li>
+          <li>exo2</li>
+          <li>exo3</li>
+        </ul>
 
-    <div>TEST</div>
-    <div>TEST</div>
-    <div>TEST</div>
-    <div>TEST</div>
-    <div>TEST</div>
+        <div>TEST</div>
+        <div>TEST</div>
+        <div>TEST</div>
+        <div>TEST</div>
+        <div>TEST</div>
 
-    <div id="track"><div id="cursor"></div></div>
+        <div id="track"><div id="cursor"></div></div>
 
-    <div class="dropdown">
-      <button class="dropbtn">Menu</button>
-      <div class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-      </div>
+        <div class="dropdown">
+          <button class="dropbtn">Menu</button>
+          <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div>
+
+        <div id="notes"></div>
+        <p id="Moyenne"></p>
+        <p id="present"></p>
     </div>
+    
 
-    <div id="notes"></div>
-    <p id="Moyenne"></p>
-    <p id="present"></p>
+    <form id="myForm">
+      <br>
+      <label for="nom">Nom: </label>
+      <input type="text" id="nom" name="nom" required title="Le nom doit contenir au moins 2 caractères">
+      <br>
+      <br>
+      <label for="prenom">Prénom: </label>
+      <input type="text" id="prenom" name="prenom" required title="Le prénom doit contenir au moins 2 caractères">
+      <br>
+      <br>
+      <label for="prenom">Numéro de téléphone: </label>
+      <input type="text" id="numTel" name="numTel" required title="Le numéro doit contenir 10 nombres">
+      <br>
+      <br>
+      <label for="adresse">Adresse: </label>
+      <input type="text" id="adresse" name="adresse" required title="L'adresse doit contenir au moins 2 caractères">
+      <br>
+      <br>
+      <label for="mdp">Mot de passe: </label>
+      <input type="password" id="mdp" name="mdp" required title="Le mot de passe doit contenir au moins 6 caractères">
+      <br>
+      <br>
+      <button type="submit">Soumettre</button>
+    </form>
 
     <script src="assets/js/main.js"></script>
     <script src="assets/js/mabiblio.js"></script>

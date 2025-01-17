@@ -39,10 +39,37 @@ function Tracker(event)
 
 function toggleDropdown() {
     let dropdownContent = document.querySelector('.dropdown-content');
-    if (dropdownContent.style.display === 'block') {
-        dropdownContent.style.display = 'none';
+    dropdownContent.style.display = (dropdownContent.style.display === 'block') ? 'none' : 'block';
+}
+
+function validateField(field, regex, errorMessage) {
+    if (!regex.test(field.value)) {
+        field.setCustomValidity(errorMessage);
+        return false;
     } else {
-        dropdownContent.style.display = 'block';
+        field.setCustomValidity('');
+        return true;
+    }
+}
+
+function Submit(event) {
+    event.preventDefault();
+    const fields = [
+        { id: 'nom', regex: /^[A-Za-z]{2,}$/, errorMessage: 'Le nom n\'est pas valide' },
+        { id: 'prenom', regex: /^[A-Za-z]{2,}$/, errorMessage: 'Le prénom n\'est pas valide' },
+        { id: 'adresse', regex: /^.{2,}$/, errorMessage: 'L\'adresse doit contenir au moins 2 caractères' },
+        { id: 'mdp', regex: /^(?=.*[A-Z])(?=.*\d)(?=.*[$?!&#@])[A-Za-z\d$?!&#@]{8}$/, errorMessage: 'Le mot de passe n\'est pas valide' },
+        { id: 'numTel', regex: /^\d{10}$/, errorMessage: 'Le numéro de téléphone doit contenir exactement 10 chiffres' }
+    ];
+
+    let valid = fields.every(field => {
+        const element = document.getElementById(field.id);
+        return validateField(element, field.regex, field.errorMessage);
+    });
+
+    if (valid) {
+        alert('Formulaire soumis avec succès');
+        event.target.submit();
     }
 }
 
@@ -51,3 +78,4 @@ document.getElementById('afficher').addEventListener('click', Afficher);
 document.getElementById('Rouge').addEventListener('mouseover', ImgOver);
 document.getElementById('Rouge').addEventListener('mouseout', ImgOut);
 document.querySelector('.dropbtn').addEventListener('click', toggleDropdown);
+document.querySelector('form').addEventListener('submit', Submit);
